@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../../models/hero';
 
 @Component({
     selector: 'app-hero',
@@ -22,7 +22,7 @@ export class HeroComponent implements OnInit {
     }
 
     countHero(hero: Hero) {
-       this.myHero = hero;
+        this.myHero = hero;
     }
 
 }

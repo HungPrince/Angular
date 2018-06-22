@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Hero } from '../../hero';
+import { Hero } from '../../../models/hero';
 
 @Component({
     selector: 'app-hero-detail',
@@ -17,5 +17,4 @@ export class HeroDetailComponent implements OnInit {
     countClickHero(hero: Hero) {
         this.displayHero.emit(this.hero);
     }
-
 }

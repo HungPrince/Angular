@@ -2,7 +2,7 @@
 <h2>My favorite is: {{myHero.name}}</h2>
 <p>heroes:</p>
 <div *ngFor="let hero of heroes">
-    <app-hero-detail [hero]=hero (displayHero)="countHero($event)"></app-hero-detail>
+    <app-hero-detail mySpy  [hero]=hero (displayHero)="countHero($event)"></app-hero-detail>
 </div>
 
 <p *ngIf="heroes && heroes.length > 3">There are many heroes !</p>
