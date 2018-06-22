@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from './hero';
 
 @Component({
     selector: 'app-root',
@@ -6,30 +7,12 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'app';
-
-    ngOnChanges() {
-        console.log('test ngOnchanges');
-    }
-    ngOnInit() {
-        console.log('test ngOnInit');
-    }
-    ngDoCheck(){
-        console.log('test ngDoCheck');
-    }
-    ngAfterContentInit() {
-        console.log('testNgAfterContentInit');
-    }
-    ngAfterContentChecked() {
-        console.log('testAfterContentChecked');
-    }
-    ngAfterViewInit() {
-        console.log('test ngAfterViewInit');
-    }
-    ngAfterViewChecked() {
-        console.log('test ngAfterViewChecked');
-    }
-    ngOnDestroy() {
-        console.log('test ngOnDestroy');
-    }
+    title = 'Tours of Heroes';
+    heroes = [
+        new Hero(1, 'Windstorm'),
+        new Hero(1, 'Bombasto'),
+        new Hero(1, 'Magneta'),
+        new Hero(1, 'Tornado'),
+    ]
+    myHero = this.heroes[0];
 }
