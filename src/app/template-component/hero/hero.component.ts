@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../models/hero';
+import { HEROES } from '../../constants/constant';
 
 @Component({
     selector: 'app-hero',
@@ -8,17 +9,12 @@ import { Hero } from '../../models/hero';
 })
 export class HeroComponent implements OnInit {
     title = 'Tours of Heroes';
-    heroes = [
-        new Hero(1, 'Windstorm'),
-        new Hero(1, 'Bombasto'),
-        new Hero(1, 'Magneta'),
-        new Hero(1, 'Tornado'),
-    ]
+    heroes = HEROES;
     myHero = this.heroes[0];
 
     constructor() { }
 
-    ngOnInit() {
+    ngOnInit() {    
     }
 
     countHero(hero: Hero) {
