@@ -1,0 +1,8 @@
+:host {
+    display: block;
+    border: 1px solid black;
+}
+
+:host-context(.themelight) h2 {
+    background-color: #eef;
+}

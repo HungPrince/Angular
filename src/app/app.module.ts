@@ -13,6 +13,11 @@ import { CountdownViewchildParentComponent } from './template-component/interact
 import { CountdownTimerComponent } from './template-component/interaction/countdown-timer/countdown-timer.component';
 import { MissioncontrolComponent } from './template-component/interaction/missioncontrol/missioncontrol.component';
 import { AstronautComponent } from './template-component/interaction/astronaut/astronaut.component';
+import { AngularElemementComponent } from './template-component/interaction/angular-elemement/angular-elemement.component';
+import { DynamicComponentComponent } from './template-component/dynamic-component/dynamic-component.component';
+import { HeroJobAdComponent } from './template-component/dynamic-component/hero-job-ad/hero-job-ad.component';
+import { HeroProfileComponent } from './template-component/dynamic-component/hero-profile/hero-profile.component';
+import { AdDirective } from './directives/ad.directive';
 
 @NgModule({
     declarations: [
@@ -26,7 +31,16 @@ import { AstronautComponent } from './template-component/interaction/astronaut/a
         CountdownViewchildParentComponent,
         CountdownTimerComponent,
         MissioncontrolComponent,
-        AstronautComponent
+        AstronautComponent,
+        AngularElemementComponent,
+        DynamicComponentComponent,
+        HeroJobAdComponent,
+        HeroProfileComponent,
+        AdDirective
+    ],
+    entryComponents:[
+        HeroJobAdComponent,
+        HeroProfileComponent
     ],
     imports: [
         BrowserModule,
