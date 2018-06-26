@@ -18,6 +18,8 @@ import { DynamicComponentComponent } from './template-component/dynamic-componen
 import { HeroJobAdComponent } from './template-component/dynamic-component/hero-job-ad/hero-job-ad.component';
 import { HeroProfileComponent } from './template-component/dynamic-component/hero-profile/hero-profile.component';
 import { AdDirective } from './directives/ad.directive';
+import { AttributeDirectiveComponent } from './template-component/attribute-directive/attribute-directive.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,9 @@ import { AdDirective } from './directives/ad.directive';
         DynamicComponentComponent,
         HeroJobAdComponent,
         HeroProfileComponent,
-        AdDirective
+        AdDirective,
+        AttributeDirectiveComponent,
+        HighlightDirective
     ],
     entryComponents:[
         HeroJobAdComponent,
