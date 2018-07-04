@@ -1,0 +1,23 @@
+<p>
+    My birthday is {{ birthday | date | uppercase}}
+</p>
+<h2>Power Booster Calculator</h2>
+<div>
+    <input type="text" [(ngModel)]="power">
+</div>
+<div>
+    <input type="text" [(ngModel)]="factor">
+</div>
+<p>Super power boots: {{power | exponentialStrength: factor}}</p>
+
+<!-- filter hero happy -->
+<div *ngFor="let hero of (heroes | happyHeroes)">
+    <p>{{hero.name}}</p>
+</div>
+
+<!-- fetch json pipe -->
+<div *ngFor="let h of ('assets/api/heroes.json' | fetchJson)">
+    <p>{{h.name}}</p>
+</div>
+
+<div>{{'assets/api/heroes.json' | fetchJson | json}}</div>

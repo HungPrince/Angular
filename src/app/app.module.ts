@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { HeroComponent } from './template-component/hero/hero.component';
 import { HeroDetailComponent } from './template-component/hero/hero-detail/hero-detail.component';
 import { SpyDirective } from './directives/spy.directive';
@@ -23,6 +25,10 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { StructureDirectiveComponent } from './template-component/structure-directive/structure-directive.component';
 import { UnlessDirective } from './directives/unless.directive';
 import { HeroSwitchComponent } from './template-component/structure-directive/hero-switch.component';
+import { PipeComponent } from './template-component/pipe/pipe.component';
+import { ExponentialStrengthPipe } from './template-component/pipe/exponential-strength.pipe';
+import { HappyHeroesPipe } from './template-component/pipe/happy-heroes.pipe';
+import { FetchJsonPipe } from './template-component/pipe/fetch-json.pipe';
 
 @NgModule({
     declarations: [
@@ -46,15 +52,21 @@ import { HeroSwitchComponent } from './template-component/structure-directive/he
         HighlightDirective,
         StructureDirectiveComponent,
         UnlessDirective,
-        HeroSwitchComponent
+        HeroSwitchComponent,
+        PipeComponent,
+        ExponentialStrengthPipe,
+        HappyHeroesPipe,
+        FetchJsonPipe
     ],
-    entryComponents:[
+    entryComponents: [
         HeroJobAdComponent,
         HeroProfileComponent
     ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        HttpModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
