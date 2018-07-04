@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -29,6 +30,7 @@ import { PipeComponent } from './template-component/pipe/pipe.component';
 import { ExponentialStrengthPipe } from './template-component/pipe/exponential-strength.pipe';
 import { HappyHeroesPipe } from './template-component/pipe/happy-heroes.pipe';
 import { FetchJsonPipe } from './template-component/pipe/fetch-json.pipe';
+import { AnimationsComponent } from './template-component/animations/animations.component';
 
 @NgModule({
     declarations: [
@@ -56,7 +58,8 @@ import { FetchJsonPipe } from './template-component/pipe/fetch-json.pipe';
         PipeComponent,
         ExponentialStrengthPipe,
         HappyHeroesPipe,
-        FetchJsonPipe
+        FetchJsonPipe,
+        AnimationsComponent
     ],
     entryComponents: [
         HeroJobAdComponent,
@@ -64,6 +67,7 @@ import { FetchJsonPipe } from './template-component/pipe/fetch-json.pipe';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         HttpModule,
         HttpClientModule
