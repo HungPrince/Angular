@@ -20,6 +20,9 @@ import { HeroProfileComponent } from './template-component/dynamic-component/her
 import { AdDirective } from './directives/ad.directive';
 import { AttributeDirectiveComponent } from './template-component/attribute-directive/attribute-directive.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { StructureDirectiveComponent } from './template-component/structure-directive/structure-directive.component';
+import { UnlessDirective } from './directives/unless.directive';
+import { HeroSwitchComponent } from './template-component/structure-directive/hero-switch.component';
 
 @NgModule({
     declarations: [
@@ -40,7 +43,10 @@ import { HighlightDirective } from './directives/highlight.directive';
         HeroProfileComponent,
         AdDirective,
         AttributeDirectiveComponent,
-        HighlightDirective
+        HighlightDirective,
+        StructureDirectiveComponent,
+        UnlessDirective,
+        HeroSwitchComponent
     ],
     entryComponents:[
         HeroJobAdComponent,

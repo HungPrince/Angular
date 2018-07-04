@@ -13,7 +13,7 @@ export class ChildInteractionComponent {
     
     @Input()
     set hero(hero: Hero) {
-        this._hero = hero.name ? hero : new Hero(0, 'HungPrince');
+        this._hero = hero.name ? hero : new Hero(0, 'HungPrince', 'happy');
     }
     get hero(): Hero {
         return this._hero;
