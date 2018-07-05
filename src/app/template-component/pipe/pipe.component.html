@@ -2,12 +2,12 @@
     My birthday is {{ birthday | date | uppercase}}
 </p>
 <h2>Power Booster Calculator</h2>
-<div>
-    <input type="text" [(ngModel)]="power">
+<!-- <div>
+    <input type="text" [(ngModel)]="power" name="power">
 </div>
 <div>
-    <input type="text" [(ngModel)]="factor">
-</div>
+    <input type="text" [(ngModel)]="factor" name="factor">
+</div> -->
 <p>Super power boots: {{power | exponentialStrength: factor}}</p>
 
 <!-- filter hero happy -->

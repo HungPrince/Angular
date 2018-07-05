@@ -7,7 +7,6 @@ import { Hero } from '../../models/hero';
 export class HappyHeroesPipe implements PipeTransform {
 
     transform(heroes: Hero[]): Hero[] {
-        console.log(heroes);
         return heroes.filter(hero => hero.emotion === 'happy');
     }
 }

@@ -12,7 +12,6 @@ export class InteractionComponent {
     master: string = "Master";
     agreed: number = 0;
     disagreed: number = 0;
-    constructor() { }
 
     onVoted(agreed) {
         agreed ? this.agreed++ : this.disagreed++;

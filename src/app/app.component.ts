@@ -1,6 +1,5 @@
 import { Component, Injector } from '@angular/core';
 import { PopupService } from './services/element/popup.service';
-import { AngularElemementComponent } from './template-component/interaction/angular-elemement/angular-elemement.component';
 import { AdService } from './services/ad/ad.service';
 import { AdItem } from './models/ad-item';
 
@@ -10,6 +9,7 @@ import { AdItem } from './models/ad-item';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+    title = 'app';
     hero: string = "HungPrince";
     ads: AdItem[];
 
