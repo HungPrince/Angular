@@ -1,0 +1,21 @@
+<!-- #input, output, EventListener -->
+<h3>{{ master }} controls {{ heroes.length }} heroes</h3>
+<h4>Agreed: {{ agreed }}, Disagreed {{ disagreed }}</h4>
+<app-child-interaction *ngFor="let hero of heroes"
+    [hero]="hero" 
+    [master]="master"
+    (voted)="onVoted($event)">
+</app-child-interaction>
+
+<!-- #variable -->
+<app-child-interaction #varLocal 
+    [hero]="heroes[0]" 
+    [master]="master">
+</app-child-interaction>
+<p (click)="varLocal.changeVariableLocal()">{{varLocal.variableLocal}}</p>
+
+<!-- #viewchild -->
+<app-countdown-viewchild-parent></app-countdown-viewchild-parent>
+
+<!-- #communicate via a service -->
+<app-missioncontrol></app-missioncontrol>

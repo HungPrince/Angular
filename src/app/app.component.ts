@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
+import { PopupService } from './services/element/popup.service';
+import { AdService } from './services/ad/ad.service';
+import { AdItem } from './models/ad-item';
 
 @Component({
     selector: 'app-root',
@@ -7,29 +10,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'app';
+    hero: string = "HungPrince";
+    ads: AdItem[];
 
-    ngOnChanges() {
-        console.log('test ngOnchanges');
+    constructor(private injector: Injector, public popup: PopupService, private adService: AdService) {
+
     }
+
     ngOnInit() {
-        console.log('test ngOnInit');
-    }
-    ngDoCheck(){
-        console.log('test ngDoCheck');
-    }
-    ngAfterContentInit() {
-        console.log('testNgAfterContentInit');
-    }
-    ngAfterContentChecked() {
-        console.log('testAfterContentChecked');
-    }
-    ngAfterViewInit() {
-        console.log('test ngAfterViewInit');
-    }
-    ngAfterViewChecked() {
-        console.log('test ngAfterViewChecked');
-    }
-    ngOnDestroy() {
-        console.log('test ngOnDestroy');
+        this.ads = this.adService.getAds();
+        console.log(this.ads);
     }
 }

@@ -1,20 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-
-import { AdDirective } from './directives/ad.directive';
-import { HighlightDirective } from './directives/highlight.directive';
-import { UnlessDirective } from './directives/unless.directive';
-import { SpyDirective } from './directives/spy.directive';
-
-import { HappyHeroesPipe } from './template-component/pipe/happy-heroes.pipe';
-import { FetchJsonPipe } from './template-component/pipe/fetch-json.pipe';
-import { ExponentialStrengthPipe } from './template-component/pipe/exponential-strength.pipe';
-
-import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 import { HeroComponent } from './template-component/hero/hero.component';
 import { HeroDetailComponent } from './template-component/hero/hero-detail/hero-detail.component';
 import { LifecycleComponent } from './template-component/lifecycle/lifecycle.component';
@@ -26,17 +11,19 @@ import { MissioncontrolComponent } from './template-component/interaction/missio
 import { AstronautComponent } from './template-component/interaction/astronaut/astronaut.component';
 import { AngularElemementComponent } from './template-component/interaction/angular-elemement/angular-elemement.component';
 import { DynamicComponentComponent } from './template-component/dynamic-component/dynamic-component.component';
-import { HeroJobAdComponent } from './template-component/dynamic-component/hero-job-ad/hero-job-ad.component';
-import { HeroProfileComponent } from './template-component/dynamic-component/hero-profile/hero-profile.component';
+import { HeroSwitchComponent } from './template-component/structure-directive/hero-switch.component';
+import { ExponentialStrengthPipe } from './template-component/pipe/exponential-strength.pipe';
+import { AnimationsComponent } from './template-component/animations/animations.component';
+import { PipeComponent } from './template-component/pipe/pipe.component';
 import { AttributeDirectiveComponent } from './template-component/attribute-directive/attribute-directive.component';
 import { StructureDirectiveComponent } from './template-component/structure-directive/structure-directive.component';
-import { HeroSwitchComponent } from './template-component/structure-directive/hero-switch.component';
-import { PipeComponent } from './template-component/pipe/pipe.component';
-import { AnimationsComponent } from './template-component/animations/animations.component';
+
 
 @NgModule({
+    imports: [
+        CommonModule
+    ],
     declarations: [
-        AppComponent,
         HeroComponent,
         HeroDetailComponent,
         LifecycleComponent,
@@ -48,35 +35,32 @@ import { AnimationsComponent } from './template-component/animations/animations.
         AstronautComponent,
         AngularElemementComponent,
         DynamicComponentComponent,
-        HeroJobAdComponent,
-        HeroProfileComponent,
-        AttributeDirectiveComponent,
-        StructureDirectiveComponent,
         HeroSwitchComponent,
+        ExponentialStrengthPipe,
         PipeComponent,
         AnimationsComponent,
-
-        SpyDirective,
-        AdDirective,
-        HighlightDirective,
-        UnlessDirective,
-
+        AttributeDirectiveComponent,
+        StructureDirectiveComponent,
+    ],
+  
+    exports: [
+        HeroComponent,
+        HeroDetailComponent,
+        LifecycleComponent,
+        InteractionComponent,
+        ChildInteractionComponent,
+        CountdownViewchildParentComponent,
+        CountdownTimerComponent,
+        MissioncontrolComponent,
+        AstronautComponent,
+        AngularElemementComponent,
+        DynamicComponentComponent,
+        HeroSwitchComponent,
         ExponentialStrengthPipe,
-        HappyHeroesPipe,
-        FetchJsonPipe,
-    ],
-    entryComponents: [
-        HeroJobAdComponent,
-        HeroProfileComponent
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        HttpModule,
-        HttpClientModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+        PipeComponent,
+        AnimationsComponent,
+        AttributeDirectiveComponent,
+        StructureDirectiveComponent,
+    ]
 })
-export class AppModule { }
+export class ComponentModule { }
