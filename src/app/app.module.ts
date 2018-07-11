@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,6 +9,8 @@ import { AdDirective } from './directives/ad.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { SpyDirective } from './directives/spy.directive';
+import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
+import { IdentityRevealedValidatorDirective } from './shared/identity-revealed.directive';
 
 import { HappyHeroesPipe } from './template-component/pipe/happy-heroes.pipe';
 import { FetchJsonPipe } from './template-component/pipe/fetch-json.pipe';
@@ -33,6 +35,12 @@ import { StructureDirectiveComponent } from './template-component/structure-dire
 import { HeroSwitchComponent } from './template-component/structure-directive/hero-switch.component';
 import { PipeComponent } from './template-component/pipe/pipe.component';
 import { AnimationsComponent } from './template-component/animations/animations.component';
+import { FormsComponent } from './forms/forms.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
+import { DetailComponent } from './forms/detail/detail.component';
+import { HeroListComponent } from './forms/hero-list/hero-list.component';
+import { DynamicsComponent } from './forms/dynamics/dynamics.component';
+import { DynamicFormQuestionComponent } from './forms/dynamic-form-question/dynamic-form-question.component';
 
 @NgModule({
     declarations: [
@@ -60,10 +68,18 @@ import { AnimationsComponent } from './template-component/animations/animations.
         AdDirective,
         HighlightDirective,
         UnlessDirective,
+        ForbiddenValidatorDirective,
+        IdentityRevealedValidatorDirective,
 
         ExponentialStrengthPipe,
         HappyHeroesPipe,
         FetchJsonPipe,
+        FormsComponent,
+        ReactiveComponent,
+        DetailComponent,
+        HeroListComponent,
+        DynamicsComponent,
+        DynamicFormQuestionComponent,
     ],
     entryComponents: [
         HeroJobAdComponent,
@@ -73,6 +89,7 @@ import { AnimationsComponent } from './template-component/animations/animations.
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         HttpClientModule
     ],
