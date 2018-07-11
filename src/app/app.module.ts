@@ -39,6 +39,8 @@ import { FormsComponent } from './forms/forms.component';
 import { ReactiveComponent } from './forms/reactive/reactive.component';
 import { DetailComponent } from './forms/detail/detail.component';
 import { HeroListComponent } from './forms/hero-list/hero-list.component';
+import { DynamicsComponent } from './forms/dynamics/dynamics.component';
+import { DynamicFormQuestionComponent } from './forms/dynamic-form-question/dynamic-form-question.component';
 
 @NgModule({
     declarations: [
@@ -76,6 +78,8 @@ import { HeroListComponent } from './forms/hero-list/hero-list.component';
         ReactiveComponent,
         DetailComponent,
         HeroListComponent,
+        DynamicsComponent,
+        DynamicFormQuestionComponent,
     ],
     entryComponents: [
         HeroJobAdComponent,

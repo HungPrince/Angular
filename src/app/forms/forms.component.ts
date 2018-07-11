@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeroForm } from '../models/hero-form';
 import { jsonpCallbackContext } from '@angular/common/http/src/module';
+import { QuestionService } from '../services/question/question.service';
 
 @Component({
     selector: 'app-forms',
@@ -13,6 +14,11 @@ export class FormsComponent {
     powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
     model = new HeroForm(22, 'HungPrince', this.powers[0], 'Chuck Overstreet');
     submited = false;
+    questions: any;
+
+    constructor(questionService: QuestionService) {
+        this.questions = questionService.getQuestions();
+    }
 
     newHero() {
         this.model = new HeroForm(22, '', '');
