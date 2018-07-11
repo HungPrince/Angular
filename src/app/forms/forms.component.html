@@ -1,0 +1,55 @@
+<!-- #start user-input -->
+<!-- <button (click)="onClickMe()">Click me!</button>
+<p>{{clickMessage}}</p>
+<input type="text" #box (keyup)="update(box.value)" (blur)="update(box.value)">
+<p>
+    {{values}}
+</p> -->
+<!-- #end user-input -->
+<!-- #start template-driven form -->
+<!-- {{diagnostic}}
+<div class="container">
+    <h2>Hero Form</h2>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm" appIdentityRevealed>
+        <div class="form-group">
+            <label for="name"></label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="model.name" minlength="4" appForbiddenName="bob" name="name"
+                #name="ngModel" required>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors.required">
+                    Name is required
+                </div>
+                <div *ngIf="name.errors.minlength">
+                    Name must be at least 4 characters long.
+                </div>
+                <div *ngIf="name.errors.forbiddenName">
+                    Name cannot be Bob
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="alterEgo"></label>
+            <input type="text" class="form-control" [(ngModel)]="model.alterEgo" name="alterEgo" id="alterEgo">
+        </div>
+
+        <div *ngIf="heroForm.errors?.identityRevealed && (heroForm.touched || heroForm.dirty)" class="cross-validation-error-message alert alert-danger">
+            Name cannot match alter ego.
+        </div>
+
+        <div class="form-group">
+            <label for="power">Hero Power</label>
+            <select name="power" id="power" class="form-control" [(ngModel)]="model.power" name="power" required>
+                <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+            </select>
+        </div>
+
+        <button type="submit" [disabled]="!heroForm.form.valid" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+    </form>
+</div> -->
+<!-- #end template-driven form -->
+
+<!-- #start reactive form -->
+    <app-reactive></app-reactive>
+<!-- #end reactive form -->
