@@ -25,7 +25,7 @@ export class QuestionService {
                 order: 3
             }),
 
-            new QuestionSelectbox({
+            new QuestionTextbox({
                 key: 'firstName',
                 label: 'First name',
                 value: 'Bombasto',
