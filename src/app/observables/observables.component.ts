@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, interval, timer, Subject, fromEvent } from 'rxjs';
-import { filter, map, first, last, takeUntil, finalize, do } from 'rxjs/operators';
+import { filter, map, first, last, takeUntil, finalize } from 'rxjs/operators';
 
 @Component({
     selector: 'app-observables',

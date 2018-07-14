@@ -43,6 +43,10 @@ import { DynamicsComponent } from './forms/dynamics/dynamics.component';
 import { DynamicFormQuestionComponent } from './forms/dynamic-form-question/dynamic-form-question.component';
 import { ObservablesComponent } from './observables/observables.component';
 
+import { CustomerDashboardModule } from './ng-module/customer-dashboard/customer-dashboard.module'
+import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -93,7 +97,10 @@ import { ObservablesComponent } from './observables/observables.component';
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        HttpClientModule
+        HttpClientModule,
+        CustomerDashboardModule,
+        CoreModule.forRoot({ userName: 'Miss Marple' }),
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
