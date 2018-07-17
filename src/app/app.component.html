@@ -55,7 +55,7 @@
 <!-- #end ng module -->
 
 <!-- #start http-client -->
-<h1>HTTP Sample</h1>
+<!-- <h1>HTTP Sample</h1>
 <div>
     <input type="checkbox" id="heroes" [checked]="toggleHeroes" (click)="toggleHeroes()">
     <label for="heroes">Heroes</label>
@@ -78,5 +78,13 @@
 <app-config *ngIf="showConfig"></app-config>
 <app-downloader *ngIf="showDownloader"></app-downloader>
 <app-uploader *ngIf="showUploader"></app-uploader>
-<app-package-search *ngIf="showSearch"></app-package-search>
+<app-package-search *ngIf="showSearch"></app-package-search> -->
 <!-- #end http-client -->
+
+<!-- #start angular-routes -->
+<h1>Angular Routes</h1>
+<nav>
+    <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
+<!-- #end angular routes -->

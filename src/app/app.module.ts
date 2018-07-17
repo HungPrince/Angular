@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule, InMemoryDbService } from 'angular-in-memory-web-api'
+import { Routes, RouterModule } from '@angular/router';
 
 import { AdDirective } from './directives/ad.directive';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -63,6 +64,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { httpInterceptorProviders } from './http-client/http-interceptors/index';
 import { RequestCache, RequestCatchWithMap } from './http-client/request-cache.service';
 import { InMemoryDataService } from './http-client/in-memory-data.service';
+
+const appRoutes: Routes = [
+    { path: 'hero/:id', component: DetailComponent },
+    { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
+    { path: '', redirectTo: 'heroes', pathMatch: 'full' },
+    { path: '**', component: HeroListComponent }
+];
+
 
 @NgModule({
     declarations: [
@@ -125,9 +134,12 @@ import { InMemoryDataService } from './http-client/in-memory-data.service';
         CustomerDashboardModule,
         CoreModule.forRoot({ userName: 'Miss Marple' }),
         AppRoutingModule,
+        RouterModule.forRoot(appRoutes,
+            // this should only be used for dubugging purpose
+            { enableTracing: true }),
         HttpClientInMemoryWebApiModule.forRoot(
             InMemoryDataService, {
-                dataEncapsulation:false,
+                dataEncapsulation: false,
                 passThruUnknownUrl: true,
                 put204: false
             }
