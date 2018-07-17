@@ -65,13 +65,9 @@ import { httpInterceptorProviders } from './http-client/http-interceptors/index'
 import { RequestCache, RequestCatchWithMap } from './http-client/request-cache.service';
 import { InMemoryDataService } from './http-client/in-memory-data.service';
 
-const appRoutes: Routes = [
-    { path: 'hero/:id', component: DetailComponent },
-    { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
-    { path: '', redirectTo: 'heroes', pathMatch: 'full' },
-    { path: '**', component: HeroListComponent }
-];
-
+// routing and navigation
+import { NotFoundComponent } from './rounting-navigation/error/not-found.component';
+import { CrisisListComponent } from './rounting-navigation/crisis-list.component';
 
 @NgModule({
     declarations: [
@@ -118,7 +114,10 @@ const appRoutes: Routes = [
         HeroesComponent,
         UploaderComponent,
         DownloaderComponent,
-        PackageSearchComponent
+        PackageSearchComponent,
+
+        CrisisListComponent,
+        NotFoundComponent
     ],
     entryComponents: [
         HeroJobAdComponent,
@@ -134,9 +133,6 @@ const appRoutes: Routes = [
         CustomerDashboardModule,
         CoreModule.forRoot({ userName: 'Miss Marple' }),
         AppRoutingModule,
-        RouterModule.forRoot(appRoutes,
-            // this should only be used for dubugging purpose
-            { enableTracing: true }),
         HttpClientInMemoryWebApiModule.forRoot(
             InMemoryDataService, {
                 dataEncapsulation: false,
