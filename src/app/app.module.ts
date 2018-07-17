@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule, InMemoryDbService } from 'angular-in-memory-web-api'
+import { Routes, RouterModule } from '@angular/router';
 
 import { AdDirective } from './directives/ad.directive';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -43,9 +45,33 @@ import { DynamicsComponent } from './forms/dynamics/dynamics.component';
 import { DynamicFormQuestionComponent } from './forms/dynamic-form-question/dynamic-form-question.component';
 import { ObservablesComponent } from './observables/observables.component';
 
+// http-client
+import { ConfigComponent } from './http-client/config/config.component';
+import { DownloaderComponent } from './http-client/dowloader/dowloader.comonent';
+import { UploaderComponent } from './http-client/uploader/uploader.component';
+import { HeroesComponent } from './http-client/heroes/heroes.component';
+import { MessagesComponent } from './http-client/messages/messages.component';
+import { PackageSearchComponent } from './http-client/package-search/package-search.component';
+
+import { AuthService } from './http-client/auth.service';
+import { MessageService } from './http-client/message.service';
+import { HttpErrorHandler } from './http-client/http-error-handler.service';
+
 import { CustomerDashboardModule } from './ng-module/customer-dashboard/customer-dashboard.module'
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
+
+import { httpInterceptorProviders } from './http-client/http-interceptors/index';
+import { RequestCache, RequestCatchWithMap } from './http-client/request-cache.service';
+import { InMemoryDataService } from './http-client/in-memory-data.service';
+
+const appRoutes: Routes = [
+    { path: 'hero/:id', component: DetailComponent },
+    { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
+    { path: '', redirectTo: 'heroes', pathMatch: 'full' },
+    { path: '**', component: HeroListComponent }
+];
+
 
 @NgModule({
     declarations: [
@@ -86,6 +112,13 @@ import { AppRoutingModule } from './app-routing.module';
         DynamicsComponent,
         DynamicFormQuestionComponent,
         ObservablesComponent,
+
+        ConfigComponent,
+        MessagesComponent,
+        HeroesComponent,
+        UploaderComponent,
+        DownloaderComponent,
+        PackageSearchComponent
     ],
     entryComponents: [
         HeroJobAdComponent,
@@ -100,9 +133,27 @@ import { AppRoutingModule } from './app-routing.module';
         HttpClientModule,
         CustomerDashboardModule,
         CoreModule.forRoot({ userName: 'Miss Marple' }),
-        AppRoutingModule
+        AppRoutingModule,
+        RouterModule.forRoot(appRoutes,
+            // this should only be used for dubugging purpose
+            { enableTracing: true }),
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, {
+                dataEncapsulation: false,
+                passThruUnknownUrl: true,
+                put204: false
+            }
+        )
     ],
-    providers: [],
+    providers: [
+        AuthService,
+        MessageService,
+        HttpErrorHandler,
+        {
+            provide: RequestCache, useClass: RequestCatchWithMap
+        },
+        httpInterceptorProviders
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
