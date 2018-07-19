@@ -6,20 +6,21 @@ import { switchMap } from "rxjs/operators";
 
 @Component({
     template: `
-        <h2>HEROES</h2>
-        <ul class="items">
-            <li *ngFor="let hero of heroes$ | async" [class.selected === selectedId]>
-                <a [routerLink]="['/hero', hero.id]">
-                    <span class="badge">{{hero.id}}</span> {{hero.name}}
-                </a>
-            </li>
-        </ul>
+    <h2>HEROES</h2>
+    <ul class="items">
+      <li *ngFor="let hero of heroes$ | async"
+        [class.selected]="hero.id === selectedId">
+        <a [routerLink]="['/hero', hero.id]">
+          <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+        </a>
+      </li>
+    </ul>
 
-        <button routerLink="/sidekicks">Go to sidekicks</button>
+    <button routerLink="/sidekicks">Go to sidekicks</button>
     `
 })
 
-export class HeroListComponent {
+export class HeroList1Component {
     heroes$: Observable<Hero[]>;
     private selectedId: number;
 

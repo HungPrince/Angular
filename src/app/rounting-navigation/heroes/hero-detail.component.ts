@@ -27,7 +27,7 @@ import { switchMap } from "rxjs/operators";
     animations: [slideInDownAnimation]
 })
 
-export class HeroDetailComponent {
+export class HeroDetail1Component {
     @HostBinding('@routeAnimation') routeAnimation = true;
     @HostBinding('style.display') display = 'block';
     @HostBinding('style.position') position = 'absolute';

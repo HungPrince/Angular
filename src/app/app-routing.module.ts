@@ -6,6 +6,10 @@ import { DetailComponent } from './forms/detail/detail.component';
 import { HeroListComponent } from './forms/hero-list/hero-list.component';
 
 import { Routes, RouterModule } from '@angular/router';
+import { ComposeMessageComponent } from './rounting-navigation/compose-message.component';
+import { AuthGuard } from './rounting-navigation/auth-guard.service';
+import { SelectivePreloadStrategy } from './rounting-navigation/selective-preload-strategy';
+import { CanDeactiveGuard } from './rounting-navigation/can-deactive-guard.service';
 
 const routes: Routes = [
     {
@@ -17,25 +21,46 @@ const routes: Routes = [
         loadChildren: './ng-module/orders//orders.module#OrdersModule'
     },
     {
+        path: 'compose',
+        component: ComposeMessageComponent,
+        outlet: 'popup'
+    },
+    {
+        path: 'admin',
+        loadChildren: './rounting-navigation/admin/admin.module#AdminModule',
+        canLoad: [AuthGuard]
+    },
+    {
+        path: 'crisis-center',
+        loadChildren: './rounting-navigation/crisis-center/crisis-center.module#CrisisCenterModule',
+        data: { preload: true }
+    },
+    { path: '', redirectTo: '/superheroes', pathMatch: 'full' },
+    { path: '**', component: NotFoundComponent },
+    {
         path: '',
         redirectTo: '',
         pathMatch: 'full'
     },
-    { path: 'hero/:id', component: DetailComponent },
-    { path: 'heroes', component: HeroListComponent, data: { title: 'Heroes List' } },
-    { path: 'crisis-list', component: CrisisListComponent },
-    { path: '', redirectTo: 'heroes', pathMatch: 'full' },
-    { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
     imports: [
-        CommonModule,
-        RouterModule.forRoot(routes, { enableTracing: true })
+        RouterModule.forRoot(
+            routes,
+            {
+                enableTracing: true, // <-- debugging purposes only
+                preloadingStrategy: SelectivePreloadStrategy,
+
+            }
+        )
     ],
     exports: [
         RouterModule
     ],
-    declarations: []
+    providers: [
+        CanDeactiveGuard,
+        SelectivePreloadStrategy
+    ]
 })
 export class AppRoutingModule { }

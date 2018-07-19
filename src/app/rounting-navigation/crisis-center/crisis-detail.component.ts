@@ -1,9 +1,9 @@
-import { Component, HostBinding } from "../../../../node_modules/@angular/core";
+import { Component, HostBinding } from "@angular/core";
 import { slideInDownAnimation } from "../animation";
 import { Crisis } from "./crisis.service";
-import { ActivatedRoute, Router } from "../../../../node_modules/@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { DialogService } from "../dialog.service";
-import { Observable } from "../../../../node_modules/rxjs";
+import { Observable } from "rxjs";
 
 @Component({
     template: `

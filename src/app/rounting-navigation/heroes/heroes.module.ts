@@ -1,9 +1,9 @@
-import { NgModule } from "../../../../node_modules/@angular/core";
+import { NgModule } from "@angular/core";
 import { HeroService } from "../../services/hero/hero.service";
-import { HeroListComponent } from "../../forms/hero-list/hero-list.component";
-import { HeroDetailComponent } from "../../template-component/hero/hero-detail/hero-detail.component";
-import { CommonModule } from "../../../../node_modules/@angular/common";
-import { FormsModule } from "../../../../node_modules/@angular/forms";
+import { HeroList1Component } from "./hero-list.component";
+import { HeroDetail1Component } from "./hero-detail.component";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import { HeroesRoutingModule } from "./heroes-routing.module";
 
 @NgModule({
@@ -13,8 +13,8 @@ import { HeroesRoutingModule } from "./heroes-routing.module";
         HeroesRoutingModule
     ],
     declarations: [
-        HeroListComponent,
-        HeroDetailComponent
+        HeroList1Component,
+        HeroDetail1Component
     ],
     providers: [
         HeroService

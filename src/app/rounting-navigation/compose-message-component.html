@@ -1,0 +1,17 @@
+<h3>Contact crisis center</h3>
+<div *ngIf="details">
+    {{details}}
+</div>
+<div>
+    <div>
+        <label for="">Message</label>
+    </div>
+    <div>
+        <textarea name="" id="" cols="30" rows="10" [(ngModel)]="message" [disabled]="sending"></textarea>
+    </div>
+</div>
+
+<p *ngIf="!sending">
+    <button (click)="send()">Send</button>
+    <button (click)="cancel()">Cancel</button>
+</p>

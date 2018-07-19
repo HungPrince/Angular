@@ -1,8 +1,8 @@
-import { Component } from "../../../../node_modules/@angular/core";
-import { Observable } from "../../../../node_modules/rxjs";
+import { Component } from "@angular/core";
+import { Observable } from "rxjs";
 import { Crisis, CrisisService } from "./crisis.service";
-import { ActivatedRoute, ParamMap } from "../../../../node_modules/@angular/router";
-import { switchMap } from "../../../../node_modules/rxjs/operators";
+import { ActivatedRoute, ParamMap } from "@angular/router";
+import { switchMap } from "rxjs/operators";
 
 
 @Component({

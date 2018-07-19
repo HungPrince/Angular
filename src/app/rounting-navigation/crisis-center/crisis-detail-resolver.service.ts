@@ -1,8 +1,8 @@
-import { Injectable } from "../../../../node_modules/@angular/core";
-import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from "../../../../node_modules/@angular/router";
+import { Injectable } from "@angular/core";
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from "@angular/router";
 import { CrisisService, Crisis } from "./crisis.service";
-import { Observable } from "../../../../node_modules/rxjs";
-import { map, take } from "../../../../node_modules/rxjs/operators";
+import { Observable } from "rxjs";
+import { map, take } from "rxjs/operators";
 
 @Injectable()
 

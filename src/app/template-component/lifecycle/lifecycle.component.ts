@@ -1,6 +1,6 @@
 import { Component, Input, SimpleChanges} from '@angular/core';
 
-import { LoggerService } from './../../services/logger/logger.service';
+import { LoggerService } from '../../services/logger/logger.service';
 
 let nextId = 1;
 

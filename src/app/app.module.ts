@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule, InMemoryDbService } from 'angular-in-memory-web-api'
-import { Routes, RouterModule } from '@angular/router';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'
 
 import { AdDirective } from './directives/ad.directive';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -61,13 +60,18 @@ import { CustomerDashboardModule } from './ng-module/customer-dashboard/customer
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
-import { httpInterceptorProviders } from './http-client/http-interceptors/index';
+import { httpInterceptorProviders } from './http-client/http-interceptors';
 import { RequestCache, RequestCatchWithMap } from './http-client/request-cache.service';
 import { InMemoryDataService } from './http-client/in-memory-data.service';
 
 // routing and navigation
 import { NotFoundComponent } from './rounting-navigation/error/not-found.component';
-import { CrisisListComponent } from './rounting-navigation/crisis-list.component';
+// import { CrisisListComponent } from './rounting-navigation/crisis-list.component';
+import { DialogService } from './rounting-navigation/dialog.service';
+import { ComposeMessageComponent } from './rounting-navigation/compose-message.component';
+import { LoginComponent } from './rounting-navigation/login.component';
+import { HeroesModule } from './rounting-navigation/heroes/heroes.module';
+import { LoginRoutingModule } from './rounting-navigation/login-routing-module';
 
 @NgModule({
     declarations: [
@@ -116,7 +120,10 @@ import { CrisisListComponent } from './rounting-navigation/crisis-list.component
         DownloaderComponent,
         PackageSearchComponent,
 
-        CrisisListComponent,
+        // routing-navigation
+        // CrisisListComponent,
+        ComposeMessageComponent,
+        LoginComponent,
         NotFoundComponent
     ],
     entryComponents: [
@@ -125,21 +132,23 @@ import { CrisisListComponent } from './rounting-navigation/crisis-list.component
     ],
     imports: [
         BrowserModule,
-        BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
         HttpClientModule,
         CustomerDashboardModule,
         CoreModule.forRoot({ userName: 'Miss Marple' }),
-        AppRoutingModule,
         HttpClientInMemoryWebApiModule.forRoot(
             InMemoryDataService, {
                 dataEncapsulation: false,
                 passThruUnknownUrl: true,
                 put204: false
             }
-        )
+        ),
+        HeroesModule,
+        LoginRoutingModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
     ],
     providers: [
         AuthService,
@@ -148,7 +157,8 @@ import { CrisisListComponent } from './rounting-navigation/crisis-list.component
         {
             provide: RequestCache, useClass: RequestCatchWithMap
         },
-        httpInterceptorProviders
+        httpInterceptorProviders,
+        DialogService
     ],
     bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
-import { Component } from "../../../../node_modules/@angular/core";
-import { Observable } from "../../../../node_modules/rxjs";
-import { ActivatedRoute } from "../../../../node_modules/@angular/router";
+import { Component } from "@angular/core";
+import { Observable } from "rxjs";
+import { ActivatedRoute } from "@angular/router";
 import { SelectivePreloadStrategy } from "../selective-preload-strategy";
 
 @Component({
