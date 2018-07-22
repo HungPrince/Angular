@@ -17,7 +17,8 @@ import { switchMap } from "rxjs/operators";
     </ul>
 
     <button routerLink="/sidekicks">Go to sidekicks</button>
-    `
+    `,
+    providers: [HeroService]
 })
 
 export class HeroList1Component {

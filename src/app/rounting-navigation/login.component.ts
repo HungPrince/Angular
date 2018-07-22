@@ -5,7 +5,7 @@ import { Router, NavigationExtras } from "@angular/router";
 @Component({
     template: `
     <h2>Login</h2>
-    <p>{{Message}}</p>
+    <p>{{message}}</p>
     <p>
         <button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
         <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
@@ -21,7 +21,7 @@ export class LoginComponent {
     }
 
     setMessage() {
-        this.message = 'Logged' + (this.authService.isLoggedIn ? 'in' : 'out');
+        this.message = 'Logged' + (this.authService.isLoggedIn ? ' in' : ' out');
     }
 
     login() {
