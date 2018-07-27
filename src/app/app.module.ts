@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 import { AdDirective } from './directives/ad.directive';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -33,6 +37,8 @@ import { StructureDirectiveComponent } from './template-component/structure-dire
 import { HeroSwitchComponent } from './template-component/structure-directive/hero-switch.component';
 import { PipeComponent } from './template-component/pipe/pipe.component';
 import { AnimationsComponent } from './template-component/animations/animations.component';
+import { ViewchildComponent } from './template-component/viewchild/viewchild.component';
+import { ColorSampleComponent } from './template-component/viewchild/color-sample/color-sample.component';
 
 @NgModule({
     declarations: [
@@ -64,6 +70,8 @@ import { AnimationsComponent } from './template-component/animations/animations.
         ExponentialStrengthPipe,
         HappyHeroesPipe,
         FetchJsonPipe,
+        ViewchildComponent,
+        ColorSampleComponent,
     ],
     entryComponents: [
         HeroJobAdComponent,
@@ -74,7 +82,11 @@ import { AnimationsComponent } from './template-component/animations/animations.
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
-        HttpClientModule
+        HttpClientModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        ColorPickerModule
     ],
     providers: [],
     bootstrap: [AppComponent]
